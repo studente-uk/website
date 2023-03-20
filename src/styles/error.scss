@@ -18,9 +18,16 @@ main {
 
     .error {
         width: 75%;
+        
+        h1 {
+            font-size: 6.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
 
         p {
-            width: 80%;
+            //width: 80%;
+            text-align: center;
         }
     }
 }
