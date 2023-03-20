@@ -1,0 +1,13 @@
+// import root from './root.scss';
+@import './root.scss';
+
+main {
+    // set background color
+    background-color: var(--c-dark);
+
+    // set padding above equal to header height
+    margin-top: var(--h-height);
+
+    // set min height to fill the rest of the page at least
+    min-height: var(--m-height);
+}
