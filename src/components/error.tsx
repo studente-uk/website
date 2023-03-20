@@ -3,8 +3,9 @@ export default function Error() {
     return (
         <main>
             <div class="error">
-                <h1>ERR: 404</h1> 
-                <p>Sorry, the page `<code>https://ashentwisle.com{window.location.pathname}</code>` does not exist. <i>Click <a href="/">here</a> to go home</i></p>
+                <h1>404</h1>
+                <p>We dropped the pot!</p> 
+                <p>Sorry, the page `<code>https://studente.co.uk{window.location.pathname}</code>` does not exist. <i>Click <a href="/">here</a> to get back to cooking.</i></p>
             </div>
         </main>
     );
