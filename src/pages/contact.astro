@@ -1,9 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import '../styles/contact.scss';
+import Contact from "../components/contact";
 ---
 
-<Layout title="Contact Me" description="Here is how you can contact me">
-    <h1>Reach Out</h1>
-    <p>Coming soon!</p>
+<Layout title="Contact Me" description="You can contact StudenteUK from this page.">
+    <h1>Contact Us</h1> 
+    <Contact client:load />
 </Layout>
 
