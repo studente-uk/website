@@ -1,9 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/BlogCard.astro";
+
+const posts = await Astro.glob("../pages/blog/*.mdx");
+
+// I am ashamed of this code, but it works
 ---
 
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Blog</h1>
     <p>Coming soon!</p>
+    <div class="blogposts">
+        {posts.map(post => 
+            <BlogCard 
+                name={post.frontmatter.title}
+                desc={post.frontmatter.description}
+                athr={post.frontmatter.author}
+                date={post.frontmatter.date}
+                 url={post.url!}
+            />
+        )}
+    </div>
 </Layout>
 

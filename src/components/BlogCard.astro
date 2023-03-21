@@ -1,0 +1,20 @@
+---
+
+export interface Props {
+    name: string;
+    url:  string;
+    desc: string;
+    athr: string;
+    date: string;
+}
+
+const { name, url, desc, athr, date } = Astro.props;
+const id = url.split("/")[url.split("/").length - 1];
+---
+
+<div class="blog-card" id={id}>
+    <h1>{name}</h1>
+    <h2>{date} - {athr}</h2>
+    <p>{desc}</p>
+
+</div>
