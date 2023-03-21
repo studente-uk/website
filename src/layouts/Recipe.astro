@@ -10,7 +10,8 @@ export interface Recipie {
         name: string,
         video: string,
         description: string,
-        tags: string[]
+        tags: string[],
+        notes: string
     },
     ingredients: {
         quantity: string,
@@ -55,7 +56,7 @@ const {info, ingredients, equipment, method} = JSON.parse(rawdata)
         <div class="ingredients">
             <h2>Ingredients</h2>
             <ul>
-                { ingredients.map((ingredient: unknown) => (
+                { ingredients.map((ingredient: { quantity: unknown; unit: unknown; item: unknown; notes: unknown; alternatives: unknown; }) => (
                     <li>
                         <span class="quantity">{ ingredient.quantity }</span>
                         <span class="unit">{ ingredient.unit }</span>
@@ -69,7 +70,7 @@ const {info, ingredients, equipment, method} = JSON.parse(rawdata)
         <div class="equipment">
             <h2>Equipment</h2>
             <ul>
-                { equipment.map((item: unknown) => (
+                { equipment.map((item: { name: unknown; description: unknown; }) => (
                     <li>
                         <span class="name">{ item.name }</span>
                         <span class="description">{ item.description }</span>
@@ -80,8 +81,8 @@ const {info, ingredients, equipment, method} = JSON.parse(rawdata)
         <div class="method">
             <h2>Method</h2>
             <ol>
-                { method.map((step: unknown) => (
-                    <li>{ step }</li>
+                { method.map((step: { short: unknown; long: unknown }) => (
+                    <li>{ step.short } - { step.long }</li>
                 )) }
             </ol>
         </div>
