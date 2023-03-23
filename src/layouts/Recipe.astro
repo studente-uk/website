@@ -8,16 +8,14 @@ const { frontmatter }= Astro.props;
 <Layout title= { frontmatter.title } description= { frontmatter.description } >
     <div class="mdheader">
         <h1>{ frontmatter.title }</h1>
-        <h2><b>By: <a><i> { frontmatter.author } </i></a></b>@ {frontmatter.date}</h2>
+        <h2><b>By: <a><i> { frontmatter.author } </i></a></b>@ {frontmatter.date} <span class="tags"> {frontmatter.tags? <i>{frontmatter.tags.map((tag: unknown) => <a href={"/tags/"+tag}>#{tag}</a>)}</i> : null}</span></h2>
+
         <p><i> {frontmatter.description} </i></p>
-        {
-            frontmatter.tags? <p><i>{frontmatter.tags.map((tag: unknown) => <a href={"/tags/"+tag}>#{tag}</a>)}</i></p> : null
-        }
         {
             frontmatter.allergens? <p><i>Allergens: {frontmatter.allergens.map((allergen: unknown) => <a href={"/allergens/"+allergen}>{allergen}</a>)}</i></p> : null
         }
         {
-            frontmatter.cite? <p><i><a href={frontmatter.cite}>The full conversation can be found here</a></i></p> : null
+            frontmatter.cite? <p><i><a href={frontmatter.cite}>This was generated with ChatGPT: The full conversation can be found here</a></i></p> : null
         }
     </div>
     <div class="mdcontent">
