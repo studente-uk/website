@@ -1,0 +1,15 @@
+---
+export interface Props {
+    tags: string[]
+}
+
+const { tags } = Astro.props
+
+// TODO: update href to point to tag page
+---
+
+<i class="tags">
+    {tags.map((tag) => {
+        return <a href="#">#{tag}</a>
+    })}
+</i>

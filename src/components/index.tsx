@@ -1,7 +1,6 @@
 import { animatedTyping } from "../libs/animations";
 
 export default function Index() {
-    const title = "Hello World, I'm Ash!";
     return (
         <div class="index">
             <LandingBanner />
