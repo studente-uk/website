@@ -7,7 +7,7 @@ import '../styles/markdown.scss';
 const { frontmatter }= Astro.props;
 ---
 
-<Layout title= { frontmatter.title } >
+<Layout title= { frontmatter.title } description= { frontmatter.description } >
     <div class="mdheader">
         <h1>{ frontmatter.title }</h1>
         <h2><b>By: <a><i> { frontmatter.author } </i></a></b>@ {frontmatter.date}</h2>

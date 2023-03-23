@@ -1,0 +1,42 @@
+---
+import Recipe from "../../layouts/Recipe.astro";
+import '../../styles/index.scss';
+
+export const recipe = JSON.stringify({
+  info: {
+    name: "recipie name",
+    video: "video url",
+    description: "recipie description",
+    tags: [
+      "tag 1", "tag 2", "..."
+    ],
+    notes: ""
+  },
+  ingredients: [
+    {
+      quantity: "",
+      unit: "g, pinch ect...",
+      item: "salt",
+      notes: "to taste",
+      alternatives: [
+        "low-sodium salt",
+      ]
+    },
+  ],
+  equipment: [
+    {
+      name: "saucepan",
+      description: "lorem",
+      // this section needs an edit
+    }
+  ],
+  method: [
+    {
+        short: "short description",
+        long: "long description",
+    }
+  ]
+})
+---
+
+<Recipe rawdata={ recipe } />
