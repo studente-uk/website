@@ -1,0 +1,11 @@
+---
+export interface Props {
+    allergens: string[];
+}
+
+const { allergens } = Astro.props;
+---
+
+<p class="allergens"><i>
+    Allergens: <u>{allergens.join(', ')}</u>
+</i></p>

@@ -1,91 +1,25 @@
 ---
-import Header from '../components/header';
-import Footer from '../components/footer';
 import Layout from '../layouts/Layout.astro';
+import Tags from '../components/Tags.astro';
 import '../styles/main.scss';
+import '../styles/markdown.scss';
+import Allergens from '../components/Allergens.astro';
+const { frontmatter }= Astro.props;
 
-
-export interface Recipie {
-    info: {
-        name: string,
-        video: string,
-        description: string,
-        tags: string[],
-        notes: string
-    },
-    ingredients: {
-        quantity: string,
-        unit: string,
-        item: string,
-        notes: string,
-        alternatives: string[]
-    }[],
-    equipment: {
-        name: string,
-        description: string
-    }[],
-    method: {
-        short: string,
-        long: string
-    }[]
-}
-
-const { rawdata } = Astro.props
-console.log(rawdata)
-const {info, ingredients, equipment, method} = JSON.parse(rawdata)
+// const tags = frontmatter.tags.map((tag: unknown) => <a href={"/tags/"+tag}>#{tag}</a>);
 ---
 
-<Layout title= { info.name } description= { info.description }>
-    <div class="recipe">
-        <div class="info">
-            <h1>{ info.name }</h1>
-            <div class="video">
-                <iframe src={ info.video }></iframe>
-            </div>
-            <div class="description">
-                <p>{ info.description }</p>
-            </div>
-            <div class="tags">
-                <ul>
-                    { info.tags.map((tag: unknown) => (
-                        <li>{ tag }</li>
-                    )) }
-                </ul>
-            </div>
-        </div>
-        <div class="ingredients">
-            <h2>Ingredients</h2>
-            <ul>
-                { ingredients.map((ingredient: { quantity: unknown; unit: unknown; item: unknown; notes: unknown; alternatives: unknown; }) => (
-                    <li>
-                        <span class="quantity">{ ingredient.quantity }</span>
-                        <span class="unit">{ ingredient.unit }</span>
-                        <span class="item">{ ingredient.item }</span>
-                        <span class="notes">{ ingredient.notes }</span>
-                        <span class="alternatives">{ ingredient.alternatives }</span>
-                    </li>
-                )) }
-            </ul>
-        </div>  
-        <div class="equipment">
-            <h2>Equipment</h2>
-            <ul>
-                { equipment.map((item: { name: unknown; description: unknown; }) => (
-                    <li>
-                        <span class="name">{ item.name }</span>
-                        <span class="description">{ item.description }</span>
-                    </li>
-                )) }
-            </ul>
-        </div> 
-        <div class="method">
-            <h2>Method</h2>
-            <ol>
-                { method.map((step: { short: unknown; long: unknown }) => (
-                    <li>{ step.short } - { step.long }</li>
-                )) }
-            </ol>
-        </div>
+<Layout title= { frontmatter.title } description= { frontmatter.description } >
+    <div class="mdheader">
+        <h1>{ frontmatter.title }</h1>
+        <h2><b>By: <a><i> { frontmatter.author } </i></a></b>@ {frontmatter.date} <Tags tags={frontmatter.tags} /></h2>
+        <p><i> {frontmatter.description} </i></p>
+        <Allergens allergens={frontmatter.allergens} />
+        {
+            frontmatter.cite? <p><i><a href={frontmatter.cite}>This was generated with ChatGPT: The full conversation can be found here</a></i></p> : null
+        }
     </div>
-
+    <div class="mdcontent">
+        <slot />
+    </div>
 </Layout>

@@ -1,14 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { recipe } from "./recipes/test.astro";
+import Recipe from "../layouts/Recipe.astro";
+export interface Recipes {
+    // make a list of Recipe objects
+    recipes: Recipe[];
+}
 
-const posts = await Astro.glob("../pages/recipes/*.astro");
-console.log(JSON.parse(posts[0].recipe));
-
-const recipes = posts.map(post => {
-    return JSON.parse(post.recipe);
-});
-
+// for each page in the recipes folder, get the recipe object
+const recipes = Object.values(import.meta.globEager("../recipes/*.astro")).map((recipe) => recipe.default);
+console.log(recipes);
 // I am ashamed of this code, but it works
 ---
 
@@ -23,3 +23,5 @@ const recipes = posts.map(post => {
         })}
     </div>
 </Layout>
+
+[x: string]: string;
