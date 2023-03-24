@@ -8,18 +8,11 @@ main {
     min-height: calc(100vh - var(--h-height) - var(--f-height) + 75px);
 
     //margin-top: var(--h-height);
-
-
     // justify content
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
-
-
-    width: 100%;
 
     .landing-banner {
 
@@ -68,6 +61,7 @@ main {
 
     .lolome {
         width: 100%;
+        padding: 2.5%;
         
         // set border bottom
         border-bottom: 1px;
@@ -77,6 +71,7 @@ main {
 
     .about-us {
         width: 100%;
+        padding: 2.5%;
 
         // set border bottom
         border-bottom: 1px;
@@ -84,5 +79,78 @@ main {
         border-bottom-color: var(--c-grey-f);
     }
 
+    .contact-us {
 
+        width: 100%;
+        min-height: 250px;
+        max-height: 500px;
+        overflow: hidden;
+        background-color: var(--c-lblue);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image img {
+            // dont stretch image
+            object-fit: cover;
+            object-position: center;
+            min-width: 1250px;
+            width: 100vw;
+            z-index: 0;
+
+            // if less than 500, hide
+            @media only screen and (max-width: 500px) {
+                display: none;
+            }
+        }
+        
+        .contact-box {
+            position: absolute;
+            width: 60%;
+            background-color: var(--c-white);
+            color: var(--c-dark);
+            border: 1px;
+            border-style: solid;
+            border-radius: 15px;
+            border-color: var(--c-grey-f);
+            padding: 10px;
+            margin: 50px;
+            z-index: 1000;
+            
+            h3 {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            
+            p {
+                margin: 0;
+                margin-top: 10px;   
+                font-size: medium;
+                font-weight: 200;
+            }
+            
+            // if width is less than 750, set width to 75%
+            @media only screen and (max-width: 750px) {
+                width: 75%;
+            }
+
+            // if less than 500, set width to 100%, radius to 0, and margin to 
+            @media only screen and (max-width: 500px) {
+                width: 100%;
+                border-radius: 0;
+                margin: 0;
+                position: relative;
+                background-color: var(--c-green);
+                color: var(--c-white);
+                border: 0;
+            }
+        }
+
+        // if less than 500, set height to auto
+        @media only screen and (max-width: 500px) {
+            min-height: fit-content;
+            max-height: fit-content;
+        }
+    }
+        
 }
