@@ -6,7 +6,10 @@ footer {
     width: 100vw;
 
     // set background color
-    background-color: var(--c-darker);
+    background-color: var(--c-lighter);
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: var(--c-grey-f);
 
     // set overflow to hidden
     overflow: hidden;

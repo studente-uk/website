@@ -5,6 +5,9 @@ main {
     padding: 0;
     margin: 0;
     border: 0;
+    min-height: calc(100vh - var(--h-height) - var(--f-height) + 75px);
+
+    //margin-top: var(--h-height);
 
     // set width
 
@@ -17,10 +20,52 @@ main {
 
 
     .index {
-        width: 70%;
+        width: 100%;
 
         p {
             width: 70%;
+        }
+
+        .landing-banner {
+
+            width: 100%;
+            height: 50vw;
+            min-height: 500px;
+
+            position: relative;
+            
+            //center content
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            // set border bottom
+            border-bottom: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: var(--c-grey-f);
+
+
+            .image img {
+                // dont stretch image
+                object-fit: cover;
+                object-position: center;
+                min-width: 1250px;
+                width: 100vw;
+                z-index: 0;
+            }
+
+            .content {
+                position: absolute;
+                width: 80%;
+                text-align: center;
+            }
+
+            @media only screen and (max-width: 750px) {
+                min-height: 300px;
+            }
         }
     }
 }
