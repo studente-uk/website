@@ -3,10 +3,13 @@
 
 main {
     // set background color
-    background-color: var(--c-dark);
+    background-color: var(--c-white);
+
+    // color
+    color: var(--c-darker);
 
     // set padding above equal to header height
-    margin-top: var(--h-height);
+    // margin-top: var(--h-height);
 
     // set min height to fill the rest of the page at least
     min-height: var(--m-height);

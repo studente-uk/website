@@ -1,9 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Index from "../components";
 import '../styles/index.scss';
+import Contact from "../components/Contact.astro";
+import AboutUs from "../components/about";
+import LandingBanner from "../components/landing-banner";
+import LoLoMe from "../components/lolome";
 ---
 
 <Layout title="Studente" description="A Student-Focussed Recipie App">
-    <Index />
+    <LandingBanner client:only/>
+    <LoLoMe />
+    <AboutUs />
+    <Contact />
 </Layout>

@@ -3,11 +3,18 @@
 
 header {
     // set background color
-    background-color: var(--c-darker);
-    
+    background-color: var(--c-lighter);
+    color: var(--c-darker);
+
+    // border bottom
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--c-grey-f);
+
     // lock to top of screen
     position: fixed;
     top: 0;
+    z-index: 1000;
 
     // set dimensions
     width: 100vw;
