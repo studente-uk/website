@@ -49,6 +49,19 @@ header {
         @media only screen and (max-width: 750px) {
             padding-right: 0;
         }
+        a {
+            text-decoration: none;
+
+            &:hover {
+                color: var(--c-white);
+                transition: ease-in-out 0.2s;
+                background-color: var(--c-green);
+                opacity: 0.5;
+                padding: 5px;
+                border-radius: 5px;
+                font-weight: 400;
+            }
+        }
     }
 
     .logo {
