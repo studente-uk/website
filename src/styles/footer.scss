@@ -23,6 +23,11 @@ footer {
     align-items: center;
     text-align: center;
 
+    .icon {
+        width: 25px;
+        height: 25px;
+    }
+
     .socials {
         // align items in center
         justify-self: center;
