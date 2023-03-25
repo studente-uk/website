@@ -59,15 +59,14 @@ main {
             img {
                 width: 25%;
                 height: 25%;
-                max-width: 250px;
-                max-height: 250px;
+                min-width: 50px;
+                min-height: 50px;
+                max-width: 200px;
+                max-height: 200px;
                 background-color: var(--c-green);
                 border-radius: 50%;
 
-                // if less than 500, hide
-                @media only screen and (max-width: 500px) {
-                    display: none;
-                }
+
             }
         }
 
