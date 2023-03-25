@@ -1,0 +1,108 @@
+@import "root.scss";
+
+.login {
+    margin-top: 75px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 225px;
+        height: 45px;
+        margin-bottom: 10px;
+    }
+    .email {
+        background-color: var(--c-white);
+        color: var(--c-darker);
+    }
+    .password {
+        background-color: var(--c-white);
+        color: var(--c-darker);
+    }
+    .submit {
+        width: 225px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px solid var(--c-green);
+        margin-bottom: 10px;
+        background-color: var(--c-white);
+        color: var(--c-darker);
+        text-decoration: solid;
+        &:hover {
+            background-color: var(--c-green);
+            transition: ease-in-out 0.2s;
+            color: var(--c-white)
+        }
+    }
+    .form-item {
+        margin-bottom: 10px;
+        .checkbox {
+            margin-right: 10px;
+        }
+        .remember {
+            color: var(--c-darker);
+        }
+    }
+}
+
+.oauth-buttons {
+    a {
+        border: 1px solid var(--c-green);
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .oauth-button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 225px;
+        height: 45px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        &:hover {
+            transition: ease-in-out 0.2s;
+            background-color: var(--c-green);
+        }
+    }
+    .google {
+        background-color: var(--c-white);
+        color: var(--c-darker);
+        &:hover {
+            background-color: var(--c-green);
+            transition: ease-in-out 0.2s;
+            color: var(--c-white)
+        }
+    }
+    .github {
+        background-color: var(--c-white);
+        color: var(--c-darker);
+        &:hover {
+            background-color: var(--c-green);
+            transition: ease-in-out 0.2s;
+            color: var(--c-white)
+        }
+    }
+    .microsoft {
+        background-color: var(--c-white);
+        color: var(--c-darker);
+        &:hover {
+            background-color: var(--c-green);
+            transition: ease-in-out 0.2s;
+            color: var(--c-white)
+        }
+    }
+}
