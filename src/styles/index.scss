@@ -57,10 +57,12 @@ main {
             text-align: center;
 
             img {
-                width: 250px;
-                height: 250px;
+                width: 25%;
+                height: 25%;
+                max-width: 250px;
+                max-height: 250px;
                 background-color: var(--c-green);
-                border-radius: 50px;
+                border-radius: 50%;
 
                 // if less than 500, hide
                 @media only screen and (max-width: 500px) {
