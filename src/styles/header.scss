@@ -44,6 +44,10 @@ header {
             padding-left: 10px;
         }
 
+        img {
+            color: var(--c-green);
+        }
+
 
         // if less than 750 px, set padding to 0
         @media only screen and (max-width: 750px) {
