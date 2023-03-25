@@ -49,6 +49,11 @@ main {
             min-width: 1250px;
             width: 100vw;
             z-index: 0;
+
+            // if width less than 500px, set height to 400px
+            @media only screen and (max-width: 500px) {
+                min-height: 400px;
+            }
         }
 
         .content {
@@ -59,8 +64,8 @@ main {
             img {
                 width: 25%;
                 height: 25%;
-                min-width: 50px;
-                min-height: 50px;
+                min-width: 100px;
+                min-height: 100px;
                 max-width: 200px;
                 max-height: 200px;
                 background-color: var(--c-green);
