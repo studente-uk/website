@@ -40,14 +40,59 @@ header {
 
         // padd nav items
         .nav-item {
-            padding-right: 10px;
-            padding-left: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .nav-login {
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
 
         // if less than 750 px, set padding to 0
         @media only screen and (max-width: 750px) {
             padding-right: 0;
+        }
+        a {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+                color: var(--c-white);
+                transition: ease-in-out 0.2s;
+                background-color: var(--c-green);
+                opacity: 0.5;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: 5px;
+                font-weight: 400;
+            }
+        }
+
+        .nav-login a {
+            color: var(--c-green);
+            background-color: var(--c-white);
+            border: 2px;
+            border-style: solid;
+            border-color: var(--c-green);
+            border-radius: 5px;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-weight: 400;
+            &:hover {
+                color: var(--c-white);
+                transition: ease-in-out 0.2s;
+                background-color: var(--c-green);
+                border-radius: 5px;
+                font-weight: 400;
+                opacity: 1;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
         }
     }
 

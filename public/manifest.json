@@ -51,6 +51,18 @@
             "purpose": "any maskable"
         },
         {
+            "src": "/assets/icon-green.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/icon-bg.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
             "src": "favicon.svg",
             "sizes": "any",
             "type": "image/svg+xml",
