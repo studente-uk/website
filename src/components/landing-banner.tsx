@@ -11,7 +11,7 @@ export default function LandingBanner() {
                 />
             </div>
             <div class="content">
-                <img src="/favicon.svg" alt="studente icon" />
+                <img src="/favicon.svg" alt="studente icon"/>
                 <h1 onMouseOver={(e) => animatedTyping(e)}>Whats Cooking?</h1>
                 <a href="/#recipes">View our Recipes</a>
             </div>
