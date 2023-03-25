@@ -1,4 +1,5 @@
 import { animatedTyping } from "../libs/animations";
+import { animatedTyping } from "../libs/animations";
 
 export default function LandingBanner() {
     return (

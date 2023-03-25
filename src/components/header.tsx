@@ -12,7 +12,7 @@ function Title() {
     // add svg logo here
     return (
         <div class="logo">
-            <a href="/"><img src="/favicon.svg" alt="</>" /></a>
+            <a href="/"><img src="/favicon.svg" alt="Header Logo" /></a>
         </div>
     );
 }
@@ -22,16 +22,19 @@ function Nav() {
         <div class="nav">
             <div class="nav-item">
                 <a href="/about">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/recipes">Recipes</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/blog">Blog</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/support">Support</a>
+                </div>
+                <div class="nav-item">
+                    <a href="/contact">Contact</a>
+                </div>
             </div>
-            <div class="nav-item">
-                <a href="/projects">Projects</a>
-            </div>
-            <div class="nav-item">
-                <a href="/blog">Blog</a>
-            </div>
-            <div class="nav-item">
-                <a href="/contact">Contact</a>
-            </div>
-        </div>
     );
 }

@@ -5,7 +5,9 @@ main {
     padding: 0;
     margin: 0;
     border: 0;
+    min-height: calc(100vh - var(--h-height) - var(--f-height) + 75px);
 
+    //margin-top: var(--h-height);
     //margin-top: var(--h-height);
     // justify content
     display: flex;
@@ -161,5 +163,6 @@ main {
             max-height: fit-content;
         }
     }
+        
         
 }

@@ -23,13 +23,6 @@ footer {
     align-items: center;
     text-align: center;
 
-    .motd {
-        // if less than 750, hide
-        @media only screen and (max-width: 750px) {
-            display: none;
-        }
-    }
-
     .socials {
         // align items in center
         justify-self: center;
