@@ -2,34 +2,38 @@
 
 export default function Footer() {
     return (
-        <footer>
-            <div class="logo"></div>
-            <div class="footer">
-                <Socials />
-                <Copyright />
-            </div>
-            <div class="logo">
-                <img src="/favicon.svg" alt="</>" />
-            </div>
+        <footer>                                         
+            <Copyright />
+            <Legal />
+            <GitHub />
+            <Email />
+
         </footer>
     );
 }
 
-function Socials() {
+function GitHub() {
     return (
-        <div class="socials">
-            <strong><p class="socials-title">Socials</p></strong>
-            <span class="socials-links">
-                <a href="https://twitter.com/studente-uk" target="_blank" rel="noreferrer">
-                    <img src="/twitter.svg" alt="Twitter" />Twitter
-                </a>
-            </span>
-            <span class="socials-links">
-                <a href="https://twitter.com/studente-uk" target="_blank" rel="noreferrer">
-                    <img src="/twitter.svg" alt="Twitter" />Twitter
-                </a>
-            </span>
-            
+        <div class="footer-item">
+            {/*<img src="/assets/github.svg" alt="" />*/}
+            <a href="https://github.com/studente-uk">GitHub</a>
+        </div>
+    );
+}
+
+function Email() {
+    return (
+        <div class="footer-item">
+            {/*<img src="/assets/icon-bg.svg" alt="" />*/}
+            <a href="mailto://studente.uk@protonmail.com">Email</a>
+        </div>
+    );
+}
+
+function Legal() {
+    return (
+        <div class="footer-item">
+            <a href="https://studente.co.uk/legal">Legal</a>
         </div>
     );
 }
@@ -39,6 +43,7 @@ function Copyright() {
     let output = currentYear > 2023 ? `2023-${currentYear}` : currentYear;
     return (
         <div class="copyright">
+            <img src="/assets/icon-bg.svg" alt="" />
             <p> &copy; <a href="https://studente.co.uk/contact">Studente</a> {output} </p>
         </div>
     );

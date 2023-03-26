@@ -4,7 +4,6 @@ main {
     margin: 0;
     border: 0;
     min-height: calc(100vh - var(--h-height) - var(--f-height) + 75px);
-    margin-top: var(--h-height);
     padding-left: 5%;
     padding-right: 5%;  
     //margin-top: var(--h-height);
@@ -14,6 +13,9 @@ main {
     align-items: center;
 
     .mdheader{
+
+        margin-top: var(--h-height);
+
         h1 {
             font-size: 2.5rem;
             font-weight: 400;

@@ -14,88 +14,41 @@ footer {
     // set overflow to hidden
     overflow: hidden;
 
-    // set to grid with 3 columns
-    display: grid;
-    grid-template-columns: 3fr 16fr 3fr;
+    display: flex;
+    flex-direction: row;
+
 
     // justify items in center
     justify-items: center;
     align-items: center;
     text-align: center;
 
-    .icon {
-        width: 25px;
+
+    img {
         height: 25px;
-        padding-right: 5px;
+        width: 25px;
+        border-radius: 100%;
+        margin-right: 10px;
+
     }
 
-    .socials {
-        // align items in center
-        justify-self: inherit;
-        align-self: inherit;
-        
-        // flex items in column
+    .footer-item {
         display: flex;
-        flex-direction: column;
-        //justify-content: center;
-        //align-items: center;
-
-        // allow for wrapping
-        flex-wrap: wrap;
-        
-        // set font size
-        font-size: 1rem;
-
-        .contact {
-            padding-left: 5px;
-            padding-right: 5px;
-
-            p {
-                line-height: 0%;
-            }
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--c-green);
-        }
-    }
-
-    .socials-title {
-        padding-bottom: 2px;
-        font-size: 1.1rem;
-    }
-
-    // set logo to bottom right
-    .logo {
-        justify-self: end;
-        align-self: end;
-        height: var(--f-height);
-        width: var(--f-height);
-
-        img {
-            // if less than 1250px, hide
-            @media only screen and (max-width: 1250px) {
-                display: none;
-            }
-        }
-    }
-
-    // if less than 750, flex
-    @media only screen and (max-width: 750px) {
-        // set to flex
-        display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
 
-        padding: 10px;
-        height: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
-    // if less than 350, increase height
-    @media only screen and (max-width: 350px) {
-        height: 125px;
-    }
+    .copyright {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
+        padding-left: 25px;
+        padding-right: 25px;
+    }
 }
