@@ -17,25 +17,20 @@ export default function Footer() {
 
 function Socials() {
     return (
-        <ul>
-            <div class="socials">
-                <li class="github">
-                    <p><img src="/assets/github.svg" class="icon"/><a href="https://github.com/studente-uk">Github</a></p>
-                </li>
-                <div class="contact">
-                   
-                </div>
-                <div class="contact">
-                    <p><a href="https://linkedin.com/in/studente-uk">LinkedIn</a></p>
-                </div>
-                <div class="contact">
-                    <p><a href="https://twitter.com/studente-uk">Twitter</a></p>
-                </div>
-                <div class="contact">
-                    <p><a href="mailto://contact@studente.co.uk">Email</a></p>
-                </div>
-            </div>
-        </ul>
+        <div class="socials">
+            <strong><p class="socials-title">Socials</p></strong>
+            <span class="socials-links">
+                <a href="https://twitter.com/studente-uk" target="_blank" rel="noreferrer">
+                    <img src="/twitter.svg" alt="Twitter" />Twitter
+                </a>
+            </span>
+            <span class="socials-links">
+                <a href="https://twitter.com/studente-uk" target="_blank" rel="noreferrer">
+                    <img src="/twitter.svg" alt="Twitter" />Twitter
+                </a>
+            </span>
+            
+        </div>
     );
 }
 
