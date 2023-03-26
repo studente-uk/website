@@ -98,7 +98,6 @@ main {
     }
 
     .contact-us {
-
         width: 100%;
         min-height: 250px;
         max-height: 500px;
@@ -124,7 +123,7 @@ main {
         
         .contact-box {
             position: absolute;
-            width: 60%;
+            width: 45%;
             background-color: var(--c-white);
             color: var(--c-dark);
             border: 1px;
@@ -133,9 +132,10 @@ main {
             border-color: var(--c-grey-f);
             padding: 10px;
             margin: 50px;
-            z-index: 1000;
+            z-index: 999;
             
             h3 {
+                padding-left: 65px;
                 margin-top: 10px;
                 margin-bottom: 10px;
             }
@@ -145,6 +145,8 @@ main {
                 margin-top: 10px;   
                 font-size: medium;
                 font-weight: 200;
+                padding-left: 65px;
+                padding-right: 65px;
             }
             
             // if width is less than 750, set width to 75%
@@ -161,6 +163,49 @@ main {
                 background-color: var(--c-green);
                 color: var(--c-white);
                 border: 0;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                .input {
+                    display: flex;
+                    flex-direction: row !important;
+                    align-items: center;
+                    justify-content: center;
+                    width: 500px;
+                    height: 45px;
+                    margin-bottom: 10px;
+                    margin-top: 5px;
+                }
+                .textarea {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: 500px;
+                    height: 100px;
+                    margin-bottom: 10px;
+                    margin-top: 5px;
+                }
+                .send {
+                    width: 225px;
+                    height: 45px;
+                    border-radius: 5px;
+                    border: 1px solid var(--c-green);
+                    margin-bottom: 10px;
+                    background-color: var(--c-white);
+                    color: var(--c-darker);
+                    text-decoration: solid;
+                    &:hover {
+                        background-color: var(--c-green);
+                        transition: ease-in-out 0.2s;
+                        color: var(--c-white)
+                    }
+                }
             }
         }
 
