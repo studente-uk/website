@@ -1,0 +1,47 @@
+@import './root.scss';
+
+main {
+
+    .noul {
+        // remove link underline
+        text-decoration: none;
+    }
+
+    .recipe-card {
+        width: 33%;
+        
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.125rem;
+            font-weight: 200;
+        }
+
+        h3 {
+            font-size: 0.875rem;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 100;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+
+        .tags a {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        * {
+            width: 100%;
+            margin: 0;
+        }
+
+    }
+}

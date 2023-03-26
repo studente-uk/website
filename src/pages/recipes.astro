@@ -1,6 +1,7 @@
 ---
+import RecipeCard from "../components/RecipeCard.astro";
 import Layout from "../layouts/Layout.astro";
-
+import '../styles/recipies.scss';
 
 const recipes = await Astro.glob("./recipes/*.mdx");
 // I am ashamed of this code, but it works
@@ -8,14 +9,27 @@ const recipes = await Astro.glob("./recipes/*.mdx");
 
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Recipes</h1>
+
+    <div class="search">
+        <!-- ADD SEARCH HERE -->
+    </div>
+
+
     <div class="recipes">
         {recipes.map((recipe) => {
+            const data = recipe.frontmatter;
+            const url = recipe.url ?? "";
+            if (data.draft) return;
             return (
-                <div class="recipe">
-                    <a href={recipe.url}>
-                        <h2>{recipe.frontmatter.title}</h2>
-                    </a>
-                </div>
+                <RecipeCard 
+                title={data.title}
+                url={recipe.url}
+                description={data.description}
+                time={data.prepT + data.cookT}
+                servings={data.servings}
+                allergens={data.allergens}
+                tags={data.tags}
+                />
             );
         })}
     </div>
