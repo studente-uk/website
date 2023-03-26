@@ -81,3 +81,5 @@ export default function motds() {
     return motds[Math.floor(Math.random() * motds.length)];
     //return "Dont hate the player, Dont hate the game, hate the troop man we take all blame";
 }
+
+
