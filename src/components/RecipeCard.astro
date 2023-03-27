@@ -1,0 +1,35 @@
+---
+
+export interface Props {
+    title: string;
+    url: string;
+    description: string;
+    time: string;
+    servings: string;
+    allergens: string[];
+    tags: string[];
+}
+
+const { title, url, description, time, servings, allergens, tags } = Astro.props;
+
+const descShort = description.length > 100 ? 
+    description.substring(0, 200)
+        .split(' ')
+        .slice(0, -1)
+        .join(' ') 
+        + ' ...' : 
+    description;
+
+const tagsJoined = tags.map(tag => `#${tag}`).join(' ');
+const allergensJoined = allergens.join(', ');
+---
+
+<div class="recipe-card">
+    <a href={url} class="noul">
+        <h1>{title}</h1>
+        <h2>Time: {time}min Serves: {servings}</h2>
+        <p>{descShort}</p>
+        <h3>Allergens: {allergensJoined}</h3>
+        <h3><i>{tagsJoined}</i></h3>
+    </a>
+</div>
