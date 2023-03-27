@@ -25,7 +25,7 @@ function Email() {
     return (
         <div class="footer-item">
             {/*<img src="/assets/icon-bg.svg" alt="" />*/}
-            <a href="mailto://studente.uk@protonmail.com">Email</a>
+            <a href=" mailto:hello@studente.co.uk?cc=studente.uk@protonmail.com ">Email</a>
         </div>
     );
 }
