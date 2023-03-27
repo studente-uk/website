@@ -1,25 +1,36 @@
 ---
+import RecipeCard from "../components/RecipeCard.astro";
 import Layout from "../layouts/Layout.astro";
-import Recipe from "../layouts/Recipe.astro";
-export interface Recipes {
-    // make a list of Recipe objects
-    recipes: Recipe[];
-}
+import '../styles/recipies.scss';
 
-// for each page in the recipes folder, get the recipe object
-const recipes = Object.values(import.meta.globEager("../recipes/*.astro")).map((recipe) => recipe.default);
-console.log(recipes);
+const recipes = await Astro.glob("./recipes/*.mdx");
 // I am ashamed of this code, but it works
 ---
 
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Recipes</h1>
+
+    <div class="search">
+        <!-- ADD SEARCH HERE -->
+    </div>
+
+
     <div class="recipes">
-        {recipes.map(recipe => {
-            <div class="recipe">
-                <h2>{recipe}</h2>
-                <p>{recipe.info.description}</p>
-            </div>
+        {recipes.map((recipe) => {
+            const data = recipe.frontmatter;
+            const url = recipe.url ?? "";
+            if (data.draft) return;
+            return (
+                <RecipeCard 
+                title={data.title}
+                url={recipe.url}
+                description={data.description}
+                time={data.prepT + data.cookT}
+                servings={data.servings}
+                allergens={data.allergens}
+                tags={data.tags}
+                />
+            );
         })}
     </div>
 </Layout>

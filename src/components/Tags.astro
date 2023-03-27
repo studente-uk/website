@@ -1,15 +1,16 @@
 ---
 export interface Props {
     tags: string[]
+    decorator: string
 }
 
-const { tags } = Astro.props
+const { tags, decorator } = Astro.props
 
 // TODO: update href to point to tag page
 ---
 
 <i class="tags">
     {tags.map((tag) => {
-        return <a href="#">#{tag}</a>
+        return <a href="#">{decorator}{tag}</a>
     })}
 </i>

@@ -1,3 +1,5 @@
+@import './root.scss';
+
 main {
     // overide default padding
     padding: 0;
@@ -32,6 +34,15 @@ main {
             font-weight: 100;
             padding-left: 25px;
             padding-right: 25px;
+        }
+
+        .tags a {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        i {
+            padding-left: 1px;
+            padding-right: 4px;
         }
     }
 
