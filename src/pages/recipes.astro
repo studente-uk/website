@@ -11,7 +11,10 @@ const recipes = await Astro.glob("./recipes/*.mdx");
     <h1>Recipes</h1>
 
     <div class="search">
-        <!-- ADD SEARCH HERE -->
+        <form action="get">
+            <input type="text" name="search" placeholder="Search for a recipe" />
+            <input type="submit" value="Search" />
+        </form>
     </div>
 
 

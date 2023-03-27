@@ -2,6 +2,10 @@
 
 main {
 
+    h1 {
+        padding-top: var(--h-height);
+    }
+
     .noul {
         // remove link underline
         text-decoration: none;
