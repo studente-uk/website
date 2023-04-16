@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Tags from '../components/Tags.astro';
 import '../styles/main.scss';
 import '../styles/markdown.scss';
+import '../styles/recipe.scss';
 import Allergens from '../components/Allergens.astro';
 const { frontmatter }= Astro.props;
 ---
@@ -18,7 +19,7 @@ const { frontmatter }= Astro.props;
             Allergens: <Tags tags={frontmatter.allergens} decorator="" />
         </b></p>
     </div>
-    <div class="mdcontent">
+    <div class="fm">
         <div class="ingredients">
             <h1>Ingredients</h1>
             <ul>
@@ -53,7 +54,8 @@ const { frontmatter }= Astro.props;
                 </div>
             ) : ""}
         </div>
-
+    </div>
+    <div class="mdcontent">
         <slot />
     </div>
 </Layout>
