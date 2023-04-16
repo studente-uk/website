@@ -8,6 +8,8 @@ main {
     min-height: calc(100vh - var(--h-height) - var(--f-height) + 75px);
     padding-left: 5%;
     padding-right: 5%;  
+    padding-top: 1.25%;
+    padding-bottom: 10%;
     //margin-top: var(--h-height);
 
     display: flex;
