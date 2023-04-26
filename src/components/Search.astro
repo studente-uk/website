@@ -1,0 +1,27 @@
+---
+// i hate this
+const recipes = await Astro.glob("../pages/recipes/*.mdx");
+
+// why is this possible
+const results = (query: string) => { 
+  const found = recipes.filter((recipe) => 
+    recipe.frontmatter.title.toLowerCase().includes(query.toLowerCase()));
+
+    if (found) {
+      found.forEach(recipe => {
+        `<a href={recipe.url}>{recipe.frontmatter.title}</a>`
+      });
+    } else {
+      `<p>No results found</p>`
+    }
+};
+---
+
+<div class="search">
+  <form class="search_form" method="get" onsubmit="results(new FormData().get('search_input'))">
+    <input class="search_input" type="text" name="q" placeholder="Search"/>
+    <input type="submit" value="Search"/>
+  </form>
+</div>
+
+

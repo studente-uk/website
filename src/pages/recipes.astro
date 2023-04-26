@@ -1,22 +1,29 @@
 ---
 import RecipeCard from "../components/RecipeCard.astro";
+import Search from "../components/Search.astro";
 import Layout from "../layouts/Layout.astro";
 import '../styles/recipies.scss';
 
 const recipes = await Astro.glob("./recipes/*.mdx");
 // I am ashamed of this code, but it works
+
+const search = (query: string) => {
+    const results = recipes.filter((recipe) => 
+        recipe.frontmatter.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    if (results) {
+        return results;
+    } else {
+        return recipes;
+    }
+}
 ---
 
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Recipes</h1>
 
-    <div class="search">
-        <form action="get">
-            <input type="text" name="search" placeholder="Search for a recipe" />
-            <input type="submit" value="Search" />
-        </form>
-    </div>
-
+     <Search/>
 
     <div class="recipes">
         {recipes.map((recipe) => {

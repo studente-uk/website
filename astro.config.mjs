@@ -9,6 +9,7 @@ import compress from "astro-compress";
 import sitemap from "astro-sitemap";
 import mdx from "@astrojs/mdx";
 import AstroPWA from '@vite-pwa/astro'
+import pagefind from 'astro-pagefind';
 
 
 // https://astro.build/config
@@ -22,6 +23,7 @@ export default defineConfig({
     prefetch(), 
     compress(), 
     mdx(), 
+    pagefind(),
     sitemap({
       customPages: [
         'https://studente.co.uk/',
