@@ -1,39 +1,49 @@
 ---
 import RecipeCard from "../components/RecipeCard.astro";
-import Search from "../components/Search.astro";
+import RecipeSearch from "../components/RecipeSearch.astro";
 import Layout from "../layouts/Layout.astro";
 import '../styles/recipies.scss';
 
 const recipes = await Astro.glob("./recipes/*.mdx");
 // I am ashamed of this code, but it works
 
-const search = (query: string) => {
-    const results = recipes.filter((recipe) => 
-        recipe.frontmatter.title.toLowerCase().includes(query.toLowerCase())
-    );
+const filteredRecipes = recipes.filter((recipe) => {
+    const recipeData = [
+        recipe.frontmatter.title,
+        recipe.frontmatter.description,
+        recipe.frontmatter.tags.join(" "),
+        recipe.frontmatter.allergens.join(" "),
+        recipe.Content
+    ].join(" ");
 
-    if (results) {
-        return results;
-    } else {
-        return recipes;
-    }
-}
+    const query = Astro.url.searchParams.get("search") || "";
+
+    return (
+        (recipeData.toLowerCase().includes(query.toLowerCase()) ||
+        query === "") && !recipe.frontmatter.draft
+    );
+});
 ---
 
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Recipes</h1>
 
-     <Search/>
+    <div class="search">
+        <form class="searchForm" method="get" onsubmit="Astro.redirect('recipes?search={1}');">
+            <input type="text" name="search" placeholder="Search" value="{Astro.url.searchParams.get('search')}" />
+            <button type="submit">Search</button>
+        </form>
+    </div>
 
     <div class="recipes">
-        {recipes.map((recipe) => {
+        {filteredRecipes.map((recipe) => {
             const data = recipe.frontmatter;
             const url = recipe.url ?? "";
             if (data.draft) return;
             return (
                 <RecipeCard 
                 title={data.title}
-                url={recipe.url}
+                url={url}
                 description={data.description}
                 time={data.prepT + data.cookT}
                 servings={data.servings}
