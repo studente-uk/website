@@ -36,6 +36,12 @@ const filteredRecipes = recipes.filter((recipe) => {
     </div>
 
     <div class="recipes">
+        {
+            filteredRecipes.length === 0 && (
+                <p>No recipes found</p>
+            )
+        }
+
         {filteredRecipes.map((recipe) => {
             const data = recipe.frontmatter;
             const url = recipe.url ?? "";

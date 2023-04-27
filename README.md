@@ -1,6 +1,6 @@
-# Hello, World  
+# Studente UK
 
-I Will get round to writing this properly at some point.  
+The source code for Studente, a group project for our first year Professional Development class in University.
 
 ## Contributing
 
