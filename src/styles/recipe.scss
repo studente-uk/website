@@ -1,0 +1,55 @@
+@import './root.scss';
+
+main {
+    // flex .fm in a column unntil less than 1000px
+    .fm {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .ingredients {
+            width: 50%;
+            padding: 10px;
+        }
+
+        .equipment {
+            width: 50%;
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            font-size: 1rem;
+            font-weight: 100;
+
+            b {
+                font-weight: 200;
+            }
+        }
+
+
+        @media (max-width: 750px) {
+            flex-direction: column;
+
+            .ingredients {
+                width: 100%;
+                padding: 0;
+            }
+
+            .equipment {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+    }
+}
