@@ -28,9 +28,15 @@ const filteredRecipes = recipes.filter((recipe) => {
 <Layout title="Blog" description="Welcome to my blog!!">
     <h1>Recipes</h1>
 
+    {
+        filteredRecipes.length === 0 && (
+            <p>No recipes found</p>
+        )
+    }
+
     <div class="search">
         <form class="searchForm" method="get" onsubmit="Astro.redirect('recipes?search={1}');">
-            <input type="text" name="search" placeholder="Search" value="{Astro.url.searchParams.get('search')}" />
+            <input type="text" name="search" placeholder="Search"/>
             <button type="submit">Search</button>
         </form>
     </div>
