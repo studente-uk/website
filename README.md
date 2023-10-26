@@ -1,3 +1,8 @@
+> **ARCHIVAL NOTIICE: **
+> this project has now been archived as we are working on a new version for our second year group project.
+> more info to come
+> - ash
+
 # Studente UK
 
 The source code for Studente, a group project for our first year Professional Development class in University.
