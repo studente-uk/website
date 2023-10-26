@@ -1,7 +1,9 @@
 > **ARCHIVAL NOTIICE: **
-> this project has now been archived as we are working on a new version for our second year group project.
-> more info to come
-> - ash
+> 
+> This project has now been archived as we are working on a new version for our second year group project.
+> more info to come.
+> 
+> \- ash
 
 # Studente UK
 
